@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Viewler"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        WindowStartupLocation="CenterScreen" WindowState="Maximized"
+        Title="MainWindow" Height="1080" Width="1920">
     <Grid>
-        
+        <DockPanel HorizontalAlignment="Left" Height="60" LastChildFill="False" VerticalAlignment="Top" Width="1912" RenderTransformOrigin="-0.395,0.02">
+            <Menu DockPanel.Dock="Top" Height="30">
+                <MenuItem Header="_Folder" Height="30" Width="45">
+                    <MenuItem Header="_New" />
+                    <MenuItem Header="_Open"/>
+                    <Separator />
+                    <MenuItem Header="_Exit" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <Rectangle Fill="#FFBCDACB" HorizontalAlignment="Left" Margin="0,30,0,0" Stroke="Black" VerticalAlignment="Top" Width="324" Height="280"/>
+        <TreeView HorizontalAlignment="Left" Height="110" Margin="22,48,0,0" VerticalAlignment="Top" Width="276">
+            <TreeViewItem Header ="Animal">
+                <TreeViewItem.Items>
+                    <Button>Dog.png</Button>
+                    <Button>Cat.jpg</Button>
+                    <Button>Mouse.gif</Button>
+                </TreeViewItem.Items>
+            </TreeViewItem>
+            <!-- Empty TreeViewItem to create space-->
+            <TreeViewItem></TreeViewItem>
+            <TreeViewItem Header="Environment">
+                <TreeViewItem.Items>
+                    <Button>Landscape.png</Button>
+                    <Button>Mountains.jpg</Button>
+                    <Button>Sea.gif</Button>
+                </TreeViewItem.Items>
+            </TreeViewItem>
+        </TreeView>
     </Grid>
 </Window>

@@ -1,0 +1,15 @@
+C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\bin\Debug\Viewler.exe.config
+C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\bin\Debug\Viewler.exe
+C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\bin\Debug\Viewler.pdb
+C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\Viewler.csprojResolveAssemblyReference.cache
+C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\MainWindow.g.cs
+C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\App.g.cs
+C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\Viewler_MarkupCompile.cache
+C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\Viewler_MarkupCompile.lref
+C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\MainWindow.baml
+C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\Viewler.g.resources
+C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\Viewler.Properties.Resources.resources
+C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\Viewler.csproj.GenerateResource.Cache
+C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\Viewler.csproj.CoreCompileInputs.cache
+C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\Viewler.exe
+C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\Viewler.pdb
