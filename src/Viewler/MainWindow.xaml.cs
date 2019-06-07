@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.IO;
 
 namespace Viewler
 {
@@ -23,6 +22,12 @@ namespace Viewler
     {
         public MainWindow() {
             InitializeComponent();
+
+            var itemProvider = new ItemProvider();
+
+            var items = itemProvider.GetItems("C:\\Temp");
+
+            DataContext = items;
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e) {
@@ -30,10 +35,7 @@ namespace Viewler
         }
 
         //Methods
-        private static TreeNode CreateDirectoryNode(DirectoryInfo _directoryInfo) {
-            var directoryNode = new TreeNode(DirectoryInfo);
+        
 
-            return _directoryInfo;
-        }
     }
 }

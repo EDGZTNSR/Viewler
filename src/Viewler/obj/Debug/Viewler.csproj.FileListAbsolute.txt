@@ -4,6 +4,7 @@ C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\b
 C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\Viewler.csprojResolveAssemblyReference.cache
 C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\MainWindow.g.cs
 C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\App.g.cs
+C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\Viewler_MarkupCompile.cache
 C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\Viewler_MarkupCompile.lref
 C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\MainWindow.baml
