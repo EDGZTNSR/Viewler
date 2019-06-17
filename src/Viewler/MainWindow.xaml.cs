@@ -21,7 +21,7 @@ namespace Viewler
 
         public MainWindow() {
             InitializeComponent();
-            InitializeItems("C:\\Temp");
+            InitializeItems("C:\\Users\\dpohland\\Documents\\temp");
         }
 
         private void OnClickMenuItemNew(object sender, RoutedEventArgs e) {
@@ -38,14 +38,12 @@ namespace Viewler
         private void OnClickMenuItemExit(object sender, RoutedEventArgs e) {
             Close();
         }
-
+        // Please Test
         private void OnSelectedItemChange(object sender, RoutedPropertyChangedEventArgs<object> e) {
-            if (ItemTreeView.SelectedItem != null && _path != null) {
+            if (ItemTreeView.SelectedItem != null) { //&& _path != null
                 ItemProvider itemProvider = new ItemProvider();
                 string itemPath = itemProvider.GetItem(ItemTreeView, _path);
-                if (!itemProvider.IsFolder(itemPath)) {
-                    SetImage(itemPath);
-                }
+                itemProvider.SetImage(itemPath, ViewlerImage);
             }
         }
 
@@ -64,15 +62,6 @@ namespace Viewler
             ItemProvider itemProvider = new ItemProvider();
             var items = itemProvider.GetItems(path);
             DataContext = items;
-        }
-        private void SetImage(string imagePath) {
-            if (imagePath != null) {
-                BitmapImage bitMapImg = new BitmapImage();
-                bitMapImg.BeginInit();
-                bitMapImg.UriSource = new Uri(imagePath);
-                bitMapImg.EndInit();
-                ViewlerImage.Source = bitMapImg;
-            }
         }
     }
 }
