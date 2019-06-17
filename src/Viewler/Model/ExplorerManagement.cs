@@ -10,7 +10,9 @@ namespace Viewler.Model {
         public string getFilePath() {
             using (var dialog = new System.Windows.Forms.FolderBrowserDialog()) {
                 System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+                
             }
+            return "";
         }
     }
 }

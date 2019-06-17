@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
         xmlns:Model="clr-namespace:Viewler.Model" 
         Title="MainWindow" 
-        WindowStartupLocation="CenterScreen" WindowState="Maximized"
-        Height="1080" Width="1920">
-    
+        WindowStartupLocation="Manual"
+        ResizeMode="NoResize"
+        Height="800" Width="1200">
+
     <Window.Resources>
         <HierarchicalDataTemplate DataType="{x:Type Model:DirectoryItem}" ItemsSource="{Binding Items}">
             <TextBlock Text="{Binding Path=Name}" ToolTip="{Binding Path=Path}"/>
@@ -16,20 +17,21 @@
         </DataTemplate>
     </Window.Resources>
 
-    
+
     <Grid>
         <DockPanel HorizontalAlignment="Left" Height="60" LastChildFill="False" VerticalAlignment="Top" Width="1912" RenderTransformOrigin="-0.395,0.02">
             <Menu DockPanel.Dock="Top" Height="30">
                 <MenuItem Header="_Folder" Height="30" Width="45">
-                    <MenuItem Header="_New" />
-                    <MenuItem Header="_Open" Click="MenuItem_Click"/>
+                    <MenuItem Header="_New" Click="OnClickMenuItemNew" />
+                    <MenuItem Header="_Open" Click="OnClickMenuItemOpen"/>
                     <Separator />
-                    <MenuItem Header="_Exit" />
+                    <MenuItem Header="_Exit" Click="OnClickMenuItemExit" />
                 </MenuItem>
             </Menu>
         </DockPanel>
-        <Rectangle Fill="#FFBCDACB" HorizontalAlignment="Left" Margin="0,30,0,0" Stroke="Black" VerticalAlignment="Top" Width="324" Height="823"/>
-        <TreeView HorizontalAlignment="Left" Height="779" Margin="22,48,0,0" VerticalAlignment="Top" Width="276" ItemsSource="{Binding}">
+        <Rectangle Fill="#FFF68F1C" HorizontalAlignment="Left" Margin="0,30,0,0" Stroke="Black" VerticalAlignment="Top" Width="324" Height="800"/>
+        <TreeView x:Name="ItemTreeView" HorizontalAlignment="Left" Height="700" Margin="21,50,0,0" VerticalAlignment="Top" Width="276" ItemsSource="{Binding}" SelectedItemChanged="OnSelectedItemChange">
         </TreeView>
+        <Image x:Name="ViewlerImage" HorizontalAlignment="Left" Height="700" Margin="351,50,0,0" VerticalAlignment="Top" Width="800" RenderTransformOrigin="-1.06,-1.26"/>
     </Grid>
 </Window>
