@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\obj\Debug\
+C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\obj\Release\
 Viewler
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\App.xaml
 11151548125
 
-17-624942973
+13-752102919
 17816740794
 MainWindow.xaml;
 
-False
+True
 

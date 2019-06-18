@@ -2,17 +2,30 @@
 using System.IO;
 using System.Windows.Forms;
 using System.Windows;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace Viewler {
     class FolderProvider: Window {
-        public string getDialogResult() {
-            using (var fdb = new FolderBrowserDialog()) {
-                DialogResult result = fdb.ShowDialog();
-                if (DialogResult.HasValue) {
-                    string[] files = Directory.GetFiles(fdb.SelectedPath);
-                    System.Windows.Forms.MessageBox.Show("Files found: " + files.Length.ToString(), "Message");
+        //--EDGZTNSR New FolderDialog. Delete Code in next Refactoring
+        //public string getDialogResult() {
+        //    using (var fdb = new FolderBrowserDialog()) {
+        //        DialogResult result = fdb.ShowDialog();
+        //        if (DialogResult.HasValue) {
+        //            string[] files = Directory.GetFiles(fdb.SelectedPath);
+        //        };
+        //        return fdb.SelectedPath;
+        //    }
+        //}
+        //++EDGZTNSR
+        public string GetNewDialogResult() {
+            using( var dialog = new CommonOpenFileDialog()) {
+                dialog.IsFolderPicker = true;
+                CommonFileDialogResult result = dialog.ShowDialog();
+                if (result == CommonFileDialogResult.Ok) {
+                    return dialog.FileName;
+                } else {
+                    return "";
                 }
-                return fdb.SelectedPath;
             }
         }
     }

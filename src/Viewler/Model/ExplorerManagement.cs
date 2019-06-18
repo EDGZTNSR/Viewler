@@ -5,8 +5,7 @@ namespace Viewler.Model {
         // Gets the Path to the currnet item
         public string getFilePath() {
             using (var dialog = new FolderBrowserDialog()) {
-                DialogResult result = dialog.ShowDialog();
-                
+                DialogResult result = dialog.ShowDialog();     
             }
             return "";
         }

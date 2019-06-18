@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Windows;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace Viewler
 {
@@ -18,9 +19,9 @@ namespace Viewler
             //not implemented yet
         }
         private void OnClickMenuItemOpen(object sender, RoutedEventArgs e) {
-            _path = _folderProvider.getDialogResult();
+            _path = _folderProvider.GetNewDialogResult();
             if (_path != "")
-                _itemProvider.InitializeItems(_path);
+                DataContext = _itemProvider.InitializeItems(_path);
         }
         private void OnClickMenuItemExit(object sender, RoutedEventArgs e) {
             Close();
@@ -29,7 +30,7 @@ namespace Viewler
             Process.Start("https://github.com/EDGZTNSR/Viewler");
         }
         private void OnSelectedItemChange(object sender, RoutedPropertyChangedEventArgs<object> e) {
-            if (ItemTreeView.SelectedItem != null) { //&& _path != null
+            if (ItemTreeView.SelectedItem != null) {
                 string itemPath = _itemProvider.GetItem(ItemTreeView, _path);
                 _imageProvider.SetImage(itemPath, ViewlerImage);
             }

@@ -30,3 +30,12 @@ C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\obj\
 C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\obj\Debug\Viewler.Properties.Resources.resources
 C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\obj\Debug\Viewler.csproj.GenerateResource.Cache
 C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\obj\Debug\Viewler.csproj.CoreCompileInputs.cache
+C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
+C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml
