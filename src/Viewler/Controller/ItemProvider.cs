@@ -1,8 +1,6 @@
-﻿using System;
+﻿using System.IO;
 using System.Collections.Generic;
-using System.IO;
 using System.Windows.Controls;
-using System.Windows.Media.Imaging;
 using Viewler.Model;
 
 namespace Viewler {
@@ -10,9 +8,10 @@ namespace Viewler {
         public List<Item> GetItems(string path) {
             var items = new List<Item>();
             var dirInfo = new DirectoryInfo(path);
+            ImageProvider imageProvider = new ImageProvider();
             // Get all the directories
             foreach (var directory in dirInfo.GetDirectories()) {
-                if (IsValidImage(directory.FullName)) {
+                if (imageProvider.IsValidImage(directory.FullName)) {
                     var item = new DirectoryItem {
                         Name = directory.Name,
                         Path = directory.FullName,
@@ -23,7 +22,7 @@ namespace Viewler {
             }
             // Get all the Files
             foreach (var file in dirInfo.GetFiles()) {
-                if (IsValidImage(file.FullName)) {
+                if (imageProvider.IsValidImage(file.FullName)) {
                     var item = new FileItem {
                         Name = file.Name,
                         Path = file.FullName
@@ -40,34 +39,11 @@ namespace Viewler {
                 return selectedItem.Path;
             return null;
         }
-        // Public Function to set the Image on the ViewlerImage
-        public bool SetImage(string imagePath, Image image) {
-            if (imagePath != null) {
-                BitmapImage bitMapImg = new BitmapImage();
-                bitMapImg.BeginInit();
-                bitMapImg.UriSource = new Uri(imagePath);
-                bitMapImg.EndInit();
-                image.Source = bitMapImg;
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-        // Validating if its a Picture type (GIF is currently not tested)
-        private bool IsValidImage(string filepath) {
-            List<string> ImageExtensions = new List<string> { ".JPG", ".JPE", ".BMP", ".GIF", ".PNG" };
-            var fileExtension = Path.GetExtension(filepath);
-            if (ImageExtensions.Contains(Path.GetExtension(filepath).ToUpperInvariant())) {
-                return true;
-            } 
-            FileAttributes attr = File.GetAttributes(@filepath);
-            if (attr.HasFlag(FileAttributes.Directory)) {
-                return true;
-            }
-            else {
-                return false;
-            }
+        //initilaize Items
+        public List<Item> InitializeItems(string path) {
+            ItemProvider itemProvider = new ItemProvider();
+            var items = itemProvider.GetItems(path);
+            return items;
         }
     }
 }
