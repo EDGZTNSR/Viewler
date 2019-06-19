@@ -16,29 +16,38 @@ namespace Viewler {
             DataContext =_itemProvider.InitializeItems("C:\\Temp");// Temporary Path
             _itemProvider.TreeViewNodeIsExpanded(ItemTreeView, true);
         }
-        // Area Folder
+        // Area File
         private void OnClickMenuItemOpen(object sender, RoutedEventArgs e) {
             _path = _folderProvider.GetNewDialogResult();
             if (!String.IsNullOrEmpty(_path)) {
-                DataContext = _itemProvider.InitializeItems(_path);
+                RefreshTreeView();
                 _itemProvider.TreeViewNodeIsExpanded(ItemTreeView, true);
             }
         }
         private void OnClickMenuItemExit(object sender, RoutedEventArgs e) {
             Close();
         }
-        //Area Process
         private void OnClickMenuItemOpenDoc(object sender, RoutedEventArgs e) {
             string itemPath = _itemProvider.GetItem(ItemTreeView, _path);
             _documentProvider.OpenDocument(itemPath);
         }
+        private void OnClickMenuItemAdd(object sender, RoutedEventArgs e) {
+            //Directory.CreateDirectory(_path + "\\New"); --> Adds new Folder but i need to create a FIle i think
+            string itemPath = _documentProvider.AddFile(_path);
+            if (!String.IsNullOrEmpty(itemPath)) {
+                RefreshTreeView();
+                _itemProvider.TreeViewNodeIsExpanded(ItemTreeView, true);
+            }
+        }
         private void OnClickMenuItemDelete(object sender, RoutedEventArgs e) {
             string itemPath = _itemProvider.GetItem(ItemTreeView, _path);
             File.Delete(itemPath);
-            DataContext = _itemProvider.InitializeItems(_path);
+            RefreshTreeView();
             _itemProvider.TreeViewNodeIsExpanded(ItemTreeView, true);
         }
-        //Area Info
+        //Area Edit
+
+        //Area Help
         private void OnClickMenuItemInfo(object sender, RoutedEventArgs e) {
             Process.Start("https://github.com/EDGZTNSR/Viewler");
         }
@@ -48,6 +57,9 @@ namespace Viewler {
                 string itemPath = _itemProvider.GetItem(ItemTreeView, _path);
                 _imageProvider.SetImage(itemPath, ViewlerImage);
             }
+        }
+        public void RefreshTreeView() {
+            DataContext = _itemProvider.InitializeItems(_path);
         }
     }
 }

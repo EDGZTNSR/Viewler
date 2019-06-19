@@ -19,25 +19,27 @@
     <Grid>
         <DockPanel HorizontalAlignment="Left" Height="60" LastChildFill="False" VerticalAlignment="Top" Width="1912" RenderTransformOrigin="-0.395,0.02">
             <Menu DockPanel.Dock="Top" Height="30">
-                <MenuItem Header="_Folder" Height="30" Width="45">
+                <MenuItem Header="_File" Height="30" Width="35">
                     <MenuItem Header="_Open Folder" Click="OnClickMenuItemOpen"/>
+                    <MenuItem Header="Add" Click="OnClickMenuItemAdd"></MenuItem>
+                    <MenuItem x:Name="MenuItemDelete" Header="Delete" Click="OnClickMenuItemDelete"></MenuItem>
+                    <Separator />
                     <MenuItem Header="_Options"></MenuItem>
                     <Separator />
-                    <MenuItem Header="_Exit" Click="OnClickMenuItemExit" />
+                    <MenuItem Header="_Exit" Click="OnClickMenuItemExit"/>
                 </MenuItem>
-                <MenuItem Header="_Process">
-                    <MenuItem Header="Open" Click="OnClickMenuItemOpenDoc"></MenuItem>
+                <MenuItem Header="_Edit" Height="30" Width="35">
+                    <MenuItem Header="Edit File" Click="OnClickMenuItemOpenDoc"></MenuItem>
                     <Separator></Separator>
-                    <MenuItem Header="Add"></MenuItem>
-                    <MenuItem x:Name="MenuItemDelete" Header="Delete" Click="OnClickMenuItemDelete"></MenuItem>
+                    
                 </MenuItem>
-                <MenuItem Header="_Help" Height="30" Width="45">
+                <MenuItem Header="_Help" Height="30" Width="35">
                     <MenuItem x:Name="InfoMenuItem" Header="_Info" Click="OnClickMenuItemInfo"></MenuItem>
                 </MenuItem>
             </Menu>
         </DockPanel>
         <Rectangle Fill="#FFF68F1C" HorizontalAlignment="Left" Margin="0,30,0,0" Stroke="Black" VerticalAlignment="Top" Width="324" Height="800"/>
-        <TreeView x:Name="ItemTreeView" HorizontalAlignment="Left" Height="700" Margin="21,50,0,0" VerticalAlignment="Top" Width="276" ItemsSource="{Binding}" SelectedItemChanged="OnSelectedItemChange"></TreeView>
+        <TreeView x:Name="ItemTreeView" HorizontalAlignment="Left" Height="700" Margin="21,50,0,0" VerticalAlignment="Top" Width="276" ItemsSource="{Binding}" SelectedItemChanged="OnSelectedItemChange" BorderBrush="#FFFF5100" Background="#FFF3EAE1"></TreeView>
         <Image x:Name="ViewlerImage" HorizontalAlignment="Left" Height="700" Margin="351,50,0,0" VerticalAlignment="Top" Width="800" RenderTransformOrigin="-1.06,-1.26"/>
     </Grid>
 </Window>

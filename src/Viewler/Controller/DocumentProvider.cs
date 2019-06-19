@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.WindowsAPICodePack.Dialogs;
+using System;
 using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Viewler {
@@ -18,5 +20,21 @@ namespace Viewler {
             p.StartInfo.Verb = "edit";
             p.Start();
         }
+        // Open File Dialog for Add Functionality
+        public string AddFile(string folderpath) {
+            using (var dialog = new CommonOpenFileDialog()) {
+                dialog.Title = "Please pick a File";
+                CommonFileDialogResult result = dialog.ShowDialog();
+                if (result == CommonFileDialogResult.Ok) {
+                    string filename = Path.GetFileName(dialog.FileName);
+                    string targetpath = folderpath + "\\" + filename;
+                    File.Move(dialog.FileName, targetpath);
+                    return targetpath;
+                } else {
+                    return "";
+                }
+            }
+        }
+
     }
 }
