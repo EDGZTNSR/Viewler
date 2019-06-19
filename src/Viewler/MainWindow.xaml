@@ -20,11 +20,16 @@
         <DockPanel HorizontalAlignment="Left" Height="60" LastChildFill="False" VerticalAlignment="Top" Width="1912" RenderTransformOrigin="-0.395,0.02">
             <Menu DockPanel.Dock="Top" Height="30">
                 <MenuItem Header="_Folder" Height="30" Width="45">
-                    <MenuItem Header="_New" Click="OnClickMenuItemNew" />
-                    <MenuItem Header="_Open" Click="OnClickMenuItemOpen"/>
+                    <MenuItem Header="_Open Folder" Click="OnClickMenuItemOpen"/>
                     <MenuItem Header="_Options"></MenuItem>
                     <Separator />
                     <MenuItem Header="_Exit" Click="OnClickMenuItemExit" />
+                </MenuItem>
+                <MenuItem Header="_Process">
+                    <MenuItem Header="Open" Click="OnClickMenuItemOpenDoc"></MenuItem>
+                    <Separator></Separator>
+                    <MenuItem Header="Add"></MenuItem>
+                    <MenuItem x:Name="MenuItemDelete" Header="Delete" Click="OnClickMenuItemDelete"></MenuItem>
                 </MenuItem>
                 <MenuItem Header="_Help" Height="30" Width="45">
                     <MenuItem x:Name="InfoMenuItem" Header="_Info" Click="OnClickMenuItemInfo"></MenuItem>

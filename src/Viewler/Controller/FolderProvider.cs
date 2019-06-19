@@ -20,6 +20,7 @@ namespace Viewler {
         public string GetNewDialogResult() {
             using( var dialog = new CommonOpenFileDialog()) {
                 dialog.IsFolderPicker = true;
+                dialog.Title = "Please pick a Folder to open in Viewler";
                 CommonFileDialogResult result = dialog.ShowDialog();
                 if (result == CommonFileDialogResult.Ok) {
                     return dialog.FileName;

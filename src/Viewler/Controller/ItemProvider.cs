@@ -5,6 +5,7 @@ using Viewler.Model;
 
 namespace Viewler {
     class ItemProvider { // Item handler Class
+
         public List<Item> GetItems(string path) {
             var items = new List<Item>();
             var dirInfo = new DirectoryInfo(path);
@@ -44,6 +45,31 @@ namespace Viewler {
             ItemProvider itemProvider = new ItemProvider();
             var items = itemProvider.GetItems(path);
             return items;
+        }
+        // Open all TreeNodes (Will be an Option later to chose if Open or Not)
+        public void TreeViewNodeIsExpanded(TreeView ItemTreeView,bool status) {
+            if (status) {
+                TreeViewItem tvi = new TreeViewItem();
+                tvi = GetTreeViewItem(ItemTreeView, ItemTreeView.SelectedItem);
+                if (tvi != null) {
+                    tvi.ExpandSubtree();
+                }
+            }
+        }
+        //Traverse TreeView to find the TreeView Item
+        private TreeViewItem GetTreeViewItem(ItemsControl parent, object item) {
+                TreeViewItem tvi =
+                    parent.ItemContainerGenerator.ContainerFromItem(item) as TreeViewItem;
+                    if (tvi == null) {
+                        foreach (object child in parent.Items) {
+                            TreeViewItem childItem =
+                                parent.ItemContainerGenerator.ContainerFromItem(child) as TreeViewItem;
+                            if (childItem != null) {
+                                tvi = GetTreeViewItem(childItem, item);
+                            }
+                        }
+                    }
+                return tvi;
         }
     }
 }

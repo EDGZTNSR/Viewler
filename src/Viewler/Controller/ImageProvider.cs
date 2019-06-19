@@ -11,6 +11,7 @@ namespace Viewler {
             if (imagePath != null) {
                 BitmapImage bitMapImg = new BitmapImage();
                 bitMapImg.BeginInit();
+                bitMapImg.CacheOption = BitmapCacheOption.OnLoad;
                 bitMapImg.UriSource = new Uri(imagePath);
                 bitMapImg.EndInit();
                 image.Source = bitMapImg;
