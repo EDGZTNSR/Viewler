@@ -14,7 +14,6 @@ C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\o
 C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\Viewler.csproj.CoreCompileInputs.cache
 C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\Viewler.exe
 C:\Users\vmadmin\Desktop\2. Lehrjahr\Projektarbeit M120_M226B\repo\src\Viewler\obj\Debug\Viewler.pdb
-C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\obj\Debug\Viewler.csprojResolveAssemblyReference.cache
 C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\obj\Debug\MainWindow.g.cs
 C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\obj\Debug\App.g.cs
 C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\obj\Debug\GeneratedInternalTypeHelper.g.cs
@@ -39,3 +38,4 @@ C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\bin\
 C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
 C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
 C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml
+C:\Users\dpohland\Documents\Dominic Pohland\Schule\M120\Viewler\src\Viewler\obj\Debug\Viewler.csprojResolveAssemblyReference.cache

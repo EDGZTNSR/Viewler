@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Viewler {
     public partial class MainWindow : Window {
@@ -24,9 +25,8 @@ namespace Viewler {
                 _itemProvider.TreeViewNodeIsExpanded(ItemTreeView, true);
             }
         }
-        private void OnClickMenuItemExit(object sender, RoutedEventArgs e) {
-            Close();
-        }
+        private void OnClickMenuItemExit(object sender, RoutedEventArgs e) => Close();
+
         private void OnClickMenuItemOpenDoc(object sender, RoutedEventArgs e) {
             string itemPath = _itemProvider.GetItem(ItemTreeView, _path);
             _documentProvider.OpenDocument(itemPath);
@@ -48,9 +48,7 @@ namespace Viewler {
         //Area Edit
 
         //Area Help
-        private void OnClickMenuItemInfo(object sender, RoutedEventArgs e) {
-            Process.Start("https://github.com/EDGZTNSR/Viewler");
-        }
+        private void OnClickMenuItemInfo(object sender, RoutedEventArgs e) => Process.Start("https://github.com/EDGZTNSR/Viewler");
         //TreeView Area
         private void OnSelectedItemChange(object sender, RoutedPropertyChangedEventArgs<object> e) {
             if (ItemTreeView.SelectedItem != null) {
@@ -58,8 +56,25 @@ namespace Viewler {
                 _imageProvider.SetImage(itemPath, ViewlerImage);
             }
         }
-        public void RefreshTreeView() {
-            DataContext = _itemProvider.InitializeItems(_path);
+        public void RefreshTreeView() => DataContext = _itemProvider.InitializeItems(_path);
+        // Buttons to Control Image Flow
+        private void OnClickBtnNext(object sender, RoutedEventArgs e) {
+            string itemPath = _itemProvider.GetItem(ItemTreeView, _path);
+            if (!String.IsNullOrEmpty(_path)) {
+                _imageProvider.NextImage(ItemTreeView, _path);
+            }
+        }
+
+        private void OnClickBtnPrevious(object sender, RoutedEventArgs e) {
+            _imageProvider.PreviousImage();
+        }
+        
+        private void CommandBinding_Executed_Next(object sender, System.Windows.Input.ExecutedRoutedEventArgs e) {
+            
+        }
+
+        private void CommandBinding_Executed_Previous(object sender, System.Windows.Input.ExecutedRoutedEventArgs e) {
+            //Maybe raise Click Event of Previous Button instead of this Code here. Dont know how to do it tough
         }
     }
 }

@@ -82,6 +82,7 @@
     <Compile Include="Controller\DocumentProvider.cs" />
     <Compile Include="Controller\FolderProvider.cs" />
     <Compile Include="Controller\ImageProvider.cs" />
+    <Compile Include="Controller\TreeViewExtender.cs" />
     <Compile Include="Model\DirectoryItem.cs" />
     <Compile Include="Model\ExplorerManagement.cs" />
     <Compile Include="Model\FileItem.cs" />

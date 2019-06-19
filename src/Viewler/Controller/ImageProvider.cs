@@ -3,6 +3,8 @@ using System.IO;
 using System.Collections.Generic;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
+using Viewler.Model;
+using Viewler.Controller;
 
 namespace Viewler {
     class ImageProvider {
@@ -33,6 +35,21 @@ namespace Viewler {
             } else {
                 return false;
             }
+        }
+        public void NextImage(TreeView ItemTreeView, string path) {
+            List<Item> items = new List<Item>();
+            ItemProvider itemProvider = new ItemProvider();
+            items = itemProvider.GetItems(path);
+            int index = ItemTreeView.Items.IndexOf(ItemTreeView.SelectedItem);
+            index++;
+
+            if (items.Count > 0) {
+                ItemTreeView.SelectItem(items[index]);
+            }
+
+        }
+        public void PreviousImage() {
+
         }
     }
 }

@@ -15,7 +15,18 @@
         <DataTemplate DataType="{x:Type Model:FileItem}">
             <TextBlock Text="{Binding Path=Name}" ToolTip="{Binding Path=Path}" />
         </DataTemplate>
+
+        <RoutedUICommand x:Key="buttonRightClick"/>
+        <RoutedUICommand x:Key="buttonLeftClick"/>
     </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource buttonRightClick}" Executed="CommandBinding_Executed_Next"></CommandBinding>
+        <CommandBinding Command="{StaticResource buttonLeftClick}" Executed="CommandBinding_Executed_Previous"></CommandBinding>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding Source={StaticResource buttonRightClick}}" Key="Right"></KeyBinding>
+        <KeyBinding Command="{Binding Source={StaticResource buttonLeftClick}}" Key="Left"></KeyBinding>
+    </Window.InputBindings>
     <Grid>
         <DockPanel HorizontalAlignment="Left" Height="60" LastChildFill="False" VerticalAlignment="Top" Width="1912" RenderTransformOrigin="-0.395,0.02">
             <Menu DockPanel.Dock="Top" Height="30">
@@ -39,7 +50,9 @@
             </Menu>
         </DockPanel>
         <Rectangle Fill="#FFF68F1C" HorizontalAlignment="Left" Margin="0,30,0,0" Stroke="Black" VerticalAlignment="Top" Width="324" Height="800"/>
-        <TreeView x:Name="ItemTreeView" HorizontalAlignment="Left" Height="700" Margin="21,50,0,0" VerticalAlignment="Top" Width="276" ItemsSource="{Binding}" SelectedItemChanged="OnSelectedItemChange" BorderBrush="#FFFF5100" Background="#FFF3EAE1"></TreeView>
-        <Image x:Name="ViewlerImage" HorizontalAlignment="Left" Height="700" Margin="351,50,0,0" VerticalAlignment="Top" Width="800" RenderTransformOrigin="-1.06,-1.26"/>
+        <TreeView x:Name="ItemTreeView" HorizontalAlignment="Left" Height="545" Margin="21,50,0,0" VerticalAlignment="Top" Width="276" ItemsSource="{Binding}" SelectedItemChanged="OnSelectedItemChange" BorderBrush="#FFFF5100" Background="#FFF3EAE1"></TreeView>
+        <Image x:Name="ViewlerImage" HorizontalAlignment="Left" Height="700" Margin="351,50,0,0" VerticalAlignment="Top" Width="811" RenderTransformOrigin="-1.06,-1.26"/>
+        <Button x:Name="btnPrevious" Content="Previous" HorizontalAlignment="Left" Margin="21,632,0,0" VerticalAlignment="Top" Width="125" Height="100" Background="#FFF3EAE1" FontWeight="SemiBold" FontStyle="Italic" FontStretch="Expanded" FontSize="24" Click="OnClickBtnPrevious" Command="{Binding Source={StaticResource buttonLeftClick}}"/>
+        <Button x:Name="btnNext" Content="Next" HorizontalAlignment="Left" Margin="172,632,0,0" VerticalAlignment="Top" Width="125" Height="100" Background="#FFF3EAE1" FontSize="24" FontStretch="Expanded" FontStyle="Italic" FontWeight="SemiBold" Click="OnClickBtnNext" Command="{Binding Source={StaticResource buttonRightClick}}"/>
     </Grid>
 </Window>
