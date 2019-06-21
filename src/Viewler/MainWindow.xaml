@@ -47,6 +47,10 @@
                 <MenuItem Header="_Help" Height="30" Width="35">
                     <MenuItem x:Name="InfoMenuItem" Header="_Info" Click="OnClickMenuItemInfo"></MenuItem>
                 </MenuItem>
+                <MenuItem x:Name="MenuItemRefresh" Header="_Refresh" Height="30" Width="50" Click="OnClickMenuItemRefresh">
+                    
+                </MenuItem>
+
             </Menu>
         </DockPanel>
         <Rectangle Fill="#FFF68F1C" HorizontalAlignment="Left" Margin="0,30,0,0" Stroke="Black" VerticalAlignment="Top" Width="324" Height="800"/>

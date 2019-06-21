@@ -5,6 +5,8 @@ using Viewler.Model;
 
 namespace Viewler {
     class ItemProvider { // Item handler Class
+        
+        public static TreeView _TreeView { private get; set; }
 
         public List<Item> GetItems(string path) {
             var items = new List<Item>();
@@ -35,7 +37,7 @@ namespace Viewler {
         }
 
         // Get Single Item
-        public string GetItem(TreeView ItemTreeView, string path) {
+        public string GetItem(TreeView ItemTreeView) {
             var selectedItem = ItemTreeView.SelectedItem as FileItem;
             if (selectedItem != null)
                 return selectedItem.Path;
@@ -48,10 +50,10 @@ namespace Viewler {
             return items;
         }
         // Open all TreeNodes (Will be an Option later to chose if Open or Not)
-        public void TreeViewNodeIsExpanded(TreeView ItemTreeView,bool status) {
+        public void TreeViewNodeIsExpanded(bool status) {
             if (status) {
                 TreeViewItem tvi = new TreeViewItem();
-                tvi = GetTreeViewItem(ItemTreeView, ItemTreeView.SelectedItem);
+                tvi = GetTreeViewItem(_TreeView, _TreeView.SelectedItem);
                 if (tvi != null) {
                     tvi.ExpandSubtree();
                 }

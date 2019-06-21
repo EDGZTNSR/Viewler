@@ -38,7 +38,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>folder.ico</ApplicationIcon>
+    <ApplicationIcon>logo_oQB_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -126,6 +126,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="folder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo_oQB_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

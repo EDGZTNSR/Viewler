@@ -13,53 +13,65 @@ namespace Viewler {
         private DocumentProvider _documentProvider = new DocumentProvider();
 
         public MainWindow() {
+            _path = "C:\\Temp"; // Temporary Path
             InitializeComponent();
-            DataContext =_itemProvider.InitializeItems("C:\\Temp");// Temporary Path
-            _itemProvider.TreeViewNodeIsExpanded(ItemTreeView, true);
+            DataContext =_itemProvider.InitializeItems(_path);
+            ItemProvider._TreeView = ItemTreeView;
+            _itemProvider.TreeViewNodeIsExpanded(true); //Expaning doesnt work
         }
         // Area File
         private void OnClickMenuItemOpen(object sender, RoutedEventArgs e) {
             _path = _folderProvider.GetNewDialogResult();
             if (!String.IsNullOrEmpty(_path)) {
                 RefreshTreeView();
-                _itemProvider.TreeViewNodeIsExpanded(ItemTreeView, true);
+                _itemProvider.TreeViewNodeIsExpanded(true);
             }
         }
         private void OnClickMenuItemExit(object sender, RoutedEventArgs e) => Close();
 
         private void OnClickMenuItemOpenDoc(object sender, RoutedEventArgs e) {
-            string itemPath = _itemProvider.GetItem(ItemTreeView, _path);
+            string itemPath = _itemProvider.GetItem(ItemTreeView);
             _documentProvider.OpenDocument(itemPath);
+            RefreshTreeView();
         }
         private void OnClickMenuItemAdd(object sender, RoutedEventArgs e) {
             //Directory.CreateDirectory(_path + "\\New"); --> Adds new Folder but i need to create a FIle i think
             string itemPath = _documentProvider.AddFile(_path);
             if (!String.IsNullOrEmpty(itemPath)) {
                 RefreshTreeView();
-                _itemProvider.TreeViewNodeIsExpanded(ItemTreeView, true);
+                _itemProvider.TreeViewNodeIsExpanded(true);
             }
         }
         private void OnClickMenuItemDelete(object sender, RoutedEventArgs e) {
-            string itemPath = _itemProvider.GetItem(ItemTreeView, _path);
+            string itemPath = _itemProvider.GetItem(ItemTreeView);
             File.Delete(itemPath);
             RefreshTreeView();
-            _itemProvider.TreeViewNodeIsExpanded(ItemTreeView, true);
+            _itemProvider.TreeViewNodeIsExpanded(true);
         }
         //Area Edit
 
         //Area Help
         private void OnClickMenuItemInfo(object sender, RoutedEventArgs e) => Process.Start("https://github.com/EDGZTNSR/Viewler");
+        //Area Refresh
+        private void OnClickMenuItemRefresh(object sender, RoutedEventArgs e) {
+            RefreshTreeView();
+        }
         //TreeView Area
         private void OnSelectedItemChange(object sender, RoutedPropertyChangedEventArgs<object> e) {
             if (ItemTreeView.SelectedItem != null) {
-                string itemPath = _itemProvider.GetItem(ItemTreeView, _path);
+                string itemPath = _itemProvider.GetItem(ItemTreeView);
                 _imageProvider.SetImage(itemPath, ViewlerImage);
             }
         }
-        public void RefreshTreeView() => DataContext = _itemProvider.InitializeItems(_path);
+        public void RefreshTreeView() {
+            string itemPath = _itemProvider.GetItem(ItemTreeView);
+            DataContext = _itemProvider.InitializeItems(_path);
+            ItemTreeView.SelectedValuePath = itemPath;
+            _itemProvider.TreeViewNodeIsExpanded(true);
+        }
         // Buttons to Control Image Flow
         private void OnClickBtnNext(object sender, RoutedEventArgs e) {
-            string itemPath = _itemProvider.GetItem(ItemTreeView, _path);
+            string itemPath = _itemProvider.GetItem(ItemTreeView);
             if (!String.IsNullOrEmpty(_path)) {
                 _imageProvider.NextImage(ItemTreeView, _path);
             }
@@ -76,5 +88,7 @@ namespace Viewler {
         private void CommandBinding_Executed_Previous(object sender, System.Windows.Input.ExecutedRoutedEventArgs e) {
             //Maybe raise Click Event of Previous Button instead of this Code here. Dont know how to do it tough
         }
+
+
     }
 }

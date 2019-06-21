@@ -24,7 +24,7 @@ namespace Viewler {
         }
         // Validating if its a Picture type (GIF is currently not tested)
         public bool IsValidImage(string filepath) {
-            List<string> ImageExtensions = new List<string> { ".JPG", ".JPE", ".BMP", ".GIF", ".PNG", ".ICO"};
+            List<string> ImageExtensions = new List<string> { ".JPG", ".JPE", ".BMP", ".GIF", ".PNG", ".ICO",".JPEG"};
             var fileExtension = Path.GetExtension(filepath);
             if (ImageExtensions.Contains(Path.GetExtension(filepath).ToUpperInvariant())) {
                 return true;
